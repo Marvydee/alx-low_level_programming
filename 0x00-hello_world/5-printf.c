@@ -5,7 +5,7 @@
  *
  * printf - prints a statement
  *
- * return - always 0 (success)
+ * Return: Always 0 (success)
  */
 int main(void)
 {

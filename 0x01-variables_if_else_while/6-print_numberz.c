@@ -8,12 +8,11 @@
  */
 int main(void)
 {
-	char num[10] = "0123456789";
-	int i;
+	int num;
 
-	for (i = 0; i < 10; i++)
+	for (num = 0; num < 10; num++)
 	{
-		putchar(num[i]);
+		printf("%d", num);
 	}
 	putchar('\n');
 	return (0);

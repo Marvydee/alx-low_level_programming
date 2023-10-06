@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+/**
+ * main - entry point
+ * int - declares a variable
+ * printf - prints a statement
+ * Return: Always 0 (success)
+ */
+int main(void)
+{
+	int num;
+
+	for (num = 0; num < 10; num++)
+	{
+		printf("%d", num);
+	}
+	putchar('\n');
+	return (0);
+}

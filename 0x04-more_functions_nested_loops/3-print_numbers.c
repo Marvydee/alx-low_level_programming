@@ -2,18 +2,17 @@
 
 /**
  * print_numbers - prints numbers from 0-9
- * digit - number
- * char - declares variable
+ * num - number
+ * int - declares variable
  * Return: no return
  */
 void print_numbers(void)
 {
-	char digit = 0;
+	int num;
 
-	while (digit <= 9)
+	for (num = 0; num <= 9 num++)
 	{
-		_putchar(digit);
-		digit++;
+		_putchar(num);
 	}
 	_putchar('\n');
 }

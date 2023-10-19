@@ -2,28 +2,29 @@
 
 /**
  * leet - encodes a string into 1337
- * @str: input string
- * Return: str
+ * @s: input string.
+ * Return: the pointer to dest.
  */
 
-
-char *leet(char *str)
+char *leet(char *s)
 {
-	char leet_map[256] = {0};
-	char *letters = "aAeEoOtTlL";
-	char *leet_codes = "44370171";
+	int count = 0, i;
+	int low_letters[] = {97, 101, 111, 116, 108};
+	int upp_letters[] = {65, 69, 79, 84, 76};
+	int numbers[] = {52, 51, 48, 55, 49};
 
-	for (int i = 0; letters[i]; i++)
+	while (*(s + count) != '\0')
 	{
-		leet_map[(int)letters[i]] = leet_codes[i];
-	}
-	for (int i = 0; str[i]; i++)
-	{
-		if (leet_map[(int)str[i]])
+		for (i = 0; i < 5; i++)
 		{
-			str[i] = leet_map[(int)str[i]];
+			if (*(s + count) == low_letters[i] || *(s + count) == upp_letters[i])
+			{
+				*(s + count) = numbers[i];
+				break;
+			}
 		}
+		count++;
 	}
-	return (str);
-}
 
+	return (s);
+}

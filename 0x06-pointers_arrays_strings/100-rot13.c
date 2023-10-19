@@ -1,29 +1,29 @@
 #include "main.h"
 
 /**
- * rot13 - encodes a string usimg rot13
- * @str: input string
- * Return: str
+ * rot13 - encodes a string using rot13
+ * @s: input string.
+ * Return: the pointer to dest.
  */
-char *rot13(char *str)
+
+char *rot13(char *s)
 {
-	int i;
+	int count = 0, i;
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; str[i]; i++)
+	while (*(s + count) != '\0')
 	{
-		char c = str[i];
-
-		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		for (i = 0; i < 52; i++)
 		{
-			if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
+			if (*(s + count) == alphabet[i])
 			{
-				str[i] = c + 13;
-			}
-			else
-			{
-				str[i] = c - 13;
+				*(s + count) = rot13[i];
+				break;
 			}
 		}
+		count++;
 	}
-	return (str);
+
+	return (s);
 }
